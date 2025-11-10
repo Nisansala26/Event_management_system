@@ -1,0 +1,183 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(90deg, #5a00f2, #c200c2);
+  color: #333;
+}
+
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: linear-gradient(90deg, #5a00f2, #c200c2);
+  color: #fff;
+}
+
+.logo {
+  
+  width: 170px;
+  height: 100px;
+}
+
+.logo img {
+    width: 170px;
+  height: 100px;
+ 
+  margin-right: 8px;
+}
+
+.highlight {
+  color: #ffb3ff;
+}
+
+.navbar nav a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-btn {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 20px;
+  padding: 8px 20px;
+  cursor: pointer;
+}
+
+/* Register Section */
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+    background: url(login.jpeg) center/cover no-repeat;
+
+}
+
+.register-container {
+  display: flex;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  overflow: hidden;
+  width: 80%;
+  max-width: 950px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.register-left {
+  flex: 1;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.register-left h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.register-left p {
+  font-size: 0.95em;
+  margin-bottom: 20px;
+}
+
+.login-text a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-form {
+  flex: 1.2;
+  padding: 50px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px #007bff;
+}
+
+.password-field {
+  display: flex;
+  align-items: center;
+}
+
+.password-field .show-btn {
+  margin-left: 10px;
+  background: transparent;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkbox label {
+  margin-left: 8px;
+}
+
+.register-btn {
+  background: #ff007b;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.google-btn img {
+  width: 20px;
+  margin-right: 10px;
+}

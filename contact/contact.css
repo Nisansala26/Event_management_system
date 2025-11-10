@@ -1,0 +1,411 @@
+/* Basic Reset and Variables */
+:root {
+    --primary-purple: #8a2be2; /* BlueViolet */
+    --dark-purple: #4b0082;   /* Indigo */
+    --light-pink: #ff69b4;     /* HotPink for button */
+    --text-dark: #333;
+    --text-light: #fff;
+    --card-bg: #fff;
+    --info-bg: #8a2be2; /* The dark purple-magenta gradient on the left */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif; /* Replace with the actual font if known */
+    background-color: #f0f0f5; /* Light grey/white background */
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+/* --- Header & Navigation --- */
+.main-header {
+ background: linear-gradient(90deg, #ff4ec4 0%, #8a2be2 100%);
+  
+    position: relative;
+    padding-bottom: 100px;
+    color: var(--text-light);
+    overflow: hidden;
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Replace with an actual background image for the silhouettes and noise/texture */
+    background-image: url('placeholder-silhouettes.png'); 
+    background-size: cover;
+    background-position: bottom;
+    opacity: 0.5; /* Adjust opacity to match the image */
+    z-index: 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 80px;
+  background: linear-gradient(90deg, #ff4ec4 0%, #8a2be2 100%);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.logo {
+   height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    text-decoration: underline;
+}
+
+.login-btn {
+    background-color: transparent;
+    border: 2px solid var(--text-light);
+    border-radius: 20px;
+    padding: 8px 20px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: var(--text-light);
+    color: var(--primary-purple);
+    border-color: var(--text-light);
+}
+
+.hero-text {
+    text-align: center;
+    padding: 50px 30px 20px;
+    position: relative;
+    z-index: 1;
+     background: linear-gradient(90deg, #ff4ec4 0%, #8a2be2 100%);
+  color: white;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    /* 'Conatct US' in the image looks like it has a white/light outline or shadow */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+
+/* --- Contact Main Content --- */
+.contact-container {
+    padding: 0 8%;
+    position: relative;
+    z-index: 2;
+    margin-top: -100px; /* Pull the card up into the header section */
+}
+
+.contact-card {
+    display: flex;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    min-height: 600px; /* Ensure a decent height */
+}
+
+/* Left Contact Info Section */
+.contact-info-section {
+    flex: 1;
+    background: linear-gradient(180deg, #9933cc 0%, #cc00cc 100%); /* Purple/Magenta Gradient */
+    padding: 50px;
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-info-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Placeholder for the abstract light-colored graphics inside the purple box */
+    background-image: url('placeholder-texture.png'); 
+    background-size: cover;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.contact-info-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.contact-info-section p {
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+.info-group {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.info-group i {
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.social-icons a i {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid var(--text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.social-icons a i:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Right Form Section */
+.contact-form-section {
+    flex: 2;
+    padding: 50px;
+    color: var(--text-dark);
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-row {
+    display: flex;
+    gap: 30px;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.input-group label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="tel"] {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    outline: none;
+    font-size: 1rem;
+}
+
+.input-group input[type="tel"] {
+    /* To account for the animated line effect below it */
+    padding-bottom: 12px;
+}
+
+.phone-line {
+    position: absolute;
+    bottom: 5px; /* Position it under the input text */
+    left: 0;
+    width: 0; /* Starts at 0 width */
+    height: 2px;
+    background-color: var(--light-pink); /* Active line color */
+    transition: width 0.3s ease-in-out;
+}
+
+.input-group input[type="tel"]:focus + .phone-line {
+    width: 100%; /* Expands on focus */
+}
+
+.subject-selection label:first-child {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 25px;
+}
+
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+.radio-group label {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.radio-group label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    background-color: var(--card-bg);
+}
+
+.radio-group input[type="radio"]:checked + label::before {
+    border-color: var(--light-pink);
+}
+
+.radio-group input[type="radio"]:checked + label::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: var(--light-pink);
+}
+
+.message-area label {
+    margin-bottom: 10px;
+}
+
+.message-area textarea {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    min-height: 120px;
+    resize: none;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.message-area textarea:focus {
+    border-color: var(--primary-purple);
+}
+
+.send-message-btn {
+    background-color: var(--light-pink);
+    color: var(--text-light);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-end; /* Pushes button to the right */
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+    transition: background-color 0.3s;
+}
+
+.send-message-btn:hover {
+    background-color: #e04b96; /* Darker pink */
+}
+
+/* Placeholder for background graphics (ribbons, paper plane) */
+.background-graphics {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* This needs a complex SVG or image to replicate the ribbons and paper plane */
+}
+
+/* --- Media Queries for basic responsiveness --- */
+@media (max-width: 992px) {
+    .contact-card {
+        flex-direction: column;
+        min-height: auto;
+    }
+    .contact-info-section {
+        padding: 40px;
+    }
+    .contact-form-section {
+        padding: 40px;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .send-message-btn {
+        align-self: stretch;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px 5%;
+    }
+    .nav-links {
+        display: none; /* Simplification: Hide nav on small screens */
+    }
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .contact-container {
+        padding: 0 5%;
+    }
+    .radio-group {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}

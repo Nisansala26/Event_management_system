@@ -1,0 +1,146 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #222;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 80px;
+  background: linear-gradient(90deg, #ff4ec4 0%, #8a2be2 100%);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 60px;
+}
+
+.logo h2 {
+  font-weight: 700;
+  color: #fff;
+}
+
+.logo span {
+  color: #ff007f;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #ff007f;
+}
+
+.login-btn {
+  background: transparent;
+  border: 1.5px solid #fff;
+  border-radius: 20px;
+  padding: 6px 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #ff007f;
+  border-color: #ff007f;
+}
+
+/* Hero Section */
+.hero {
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   background: linear-gradient(90deg, #ff4ec4 0%, #8a2be2 100%);
+  color: #fff;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+/* About Section */
+.about {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.about h2 {
+  color: #2c3e50;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.offers {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.offer h3 {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.offer p {
+  font-weight: 400;
+}
+
+/* Contributors Section */
+.contributors {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.contributors h2 {
+  margin-bottom: 30px;
+}
+
+.contributors .logos {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.contributors img {
+  width: 150px;
+  height: auto;
+}

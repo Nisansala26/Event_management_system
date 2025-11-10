@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UniEvents | Login</title>
+  <link rel="stylesheet" href="login.css" />
+  <script defer src="login.js"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="logowhite.png" alt="Logo">
+      
+    </div>
+    <nav>
+      <ul>
+        <!-- 
+         <li><a href="#">Home</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li> -->
+       
+        <a href="../register/register.html" class="login-btn">Register</a>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Login Section -->
+  <section class="login-section">
+    <div class="login-container">
+      <div class="left">
+        <h2>Login Your Account</h2>
+        <p>For the purpose of industry regulation, your details are required.</p>
+        <div class="register-text">
+          <span>Haven’t an Account? </span><a href="../register/register.html">Click Here To Register</a>
+        </div>
+      </div>
+      <div class="right">
+        <form id="loginForm" class="login-form" action="login.php" method="POST">
+  <label>Email address*</label>
+  <input type="email" name="email" placeholder="Enter email address" required />
+
+  <label>Password*</label>
+  <div class="password-field">
+    <input type="password" name="password" id="password" placeholder="Enter your password" required />
+    <span class="toggle-password" id="togglePassword">Show</span>
+  </div>
+
+  <button type="submit" class="login-btn-main">Login Account</button>
+</form>
+
+<div id="popup" class="popup"></div>
+
+      </div>
+    </div>
+  </section>
+</body>
+</html>
