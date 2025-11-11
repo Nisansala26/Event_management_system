@@ -20,6 +20,8 @@ CREATE TABLE IF NOT EXISTS users (
     fullname VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
+    role VARCHAR(20) DEFAULT 'user',
+    status VARCHAR(20) DEFAULT 'approved',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )";
 if (!$conn->query($createTableSQL)) {
@@ -30,7 +32,7 @@ if (!$conn->query($createTableSQL)) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fullname = trim($_POST['fullname'] ?? '');
     $email = trim($_POST['email'] ?? '');
-    $password = trim($_POST['password'] ?? ''); // plain text (not recommended in production)
+    $password = trim($_POST['password'] ?? '');
 
     // Validate fields
     if (empty($fullname) || empty($email) || empty($password)) {
@@ -49,9 +51,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Insert new user
+    // ✅ Hash the password before inserting
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    // Insert new user securely
     $stmt = $conn->prepare("INSERT INTO users (fullname, email, password) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $fullname, $email, $password);
+    $stmt->bind_param("sss", $fullname, $email, $hashedPassword);
 
     if ($stmt->execute()) {
         // Registration successful → redirect to login page
