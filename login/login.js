@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Handle form submit
+
   loginForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -23,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = loginForm.password.value.trim();
 
     try {
-      const res = await fetch("login.php", {
+      const res = await fetch("/web_project/login/login.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
@@ -40,9 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
         popup.className = "popup";
       }, 2500);
 
-      if(data.status === "success"){
+     if(data.status === "success" && data.redirect){
         setTimeout(() => {
-          window.location.href = "../home/home.html"; // redirect after success
+          window.location.href = data.redirect;
         }, 1500);
       }
     } catch(err){

@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #fff;
+}
+
+/* Navbar (same style as your login page) */
+.navbar {
+  background: linear-gradient(135deg, #7b2ff7, #f107a3);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+}
+
+.logo img {
+  width: 170px;
+  height: 100px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #ffd700;
+}
+
+.login-btn {
+  border: 1px solid #fff;
+  padding: 6px 18px;
+  border-radius: 20px;
+  background: transparent;
+}
+
+/* Dashboard Section */
+.dashboard-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px;
+}
+
+.dashboard-container {
+  width: 90%;
+  max-width: 1200px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-container h1 {
+  color: #4a3aff;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.dashboard-container p {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: linear-gradient(135deg, #7b2ff7, #f107a3);
+  color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1.1rem;
+  color: #ffd700;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dashboard-section {
+    padding: 20px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
